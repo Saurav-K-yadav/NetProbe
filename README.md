@@ -90,6 +90,8 @@
      - simulate attack using command <br>
             ```./goldeneye.py http://${target ip}:${target port} -w ${Number of concurrent workers} -s ${ Number of concurrent sockets }```
 
+> [!WARNING]  
+> Simulate attacks only in controlled environments with proper authorization, as unauthorized use may have severe legal consequences
 
    
 
