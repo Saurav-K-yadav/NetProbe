@@ -12,7 +12,7 @@ NetProbe investigates the application of deep learning for network intrusion det
 - ### Controlled Environment Evaluation
   A controlled environment was established to assess the effectiveness of NetProbe's deep learning models in real-world scenarios. This environment utilized an Apache server to simulate various DoS attacks, including Goldeneye, Very Short Intermittent (VSI), and Slow-HTTP attacks. NetProbe's performance was evaluated in realtime, allowing us to monitor its ability to detect and classify these attacks accurately. The successful detection of simulated attacks in this controlled setting provides promising evidence for NetProbe's potential to safeguard networks against real-world DDoS threats.
 - ### Automated IP-based Attack Response
-  NetProbe integrates with Apache2 firewall (UFW) to implement an automated attack mitigation strategy. This integration empowers NetProbe to extract attacker IPs directly from captured network packets and swiftly configure UFW to block them. This real-time response minimizes the potential disruption caused by the DDoS attack.
+  NetProbe integrates with Apache2 firewall and UFW to implement an automated attack mitigation strategy. This integration empowers NetProbe to extract attacker IPs directly from captured network packets and swiftly configure UFW to block them. This real-time response minimizes the potential disruption caused by the DDoS attack.
 ## Testbed Setup :hammer:	
 -   Install ubuntu(preferred Ubuntu 20.04.6 LTS) and kali linux for simulating attacks
 -   setup [apache2](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04) <br>
@@ -98,22 +98,20 @@ NetProbe investigates the application of deep learning for network intrusion det
      - Install slowloris from [here](https://github.com/gkbrk/slowloris)
      - we will tweak slowloris to simulate VSI-DOS using<br>
                 ``` python3 slowloris.py -i ${Target Ip} -p ${Target port} -s 10000 ```
-
 - slowhttptest<br>
        ```slowhttptest -c 10000  -i 1 -r 1000 -s 8192 -t GET -u http://${target ip}:${target port}/```
 - GoldenEye<br>
      - Install goldenEye from [here](https://github.com/jseidl/GoldenEye)
      - simulate attack using command <br>
             ```./goldeneye.py http://${target ip}:${target port} -w ${Number of concurrent workers} -s ${ Number of concurrent sockets }```
+> [!WARNING]
+> DDoS attack simulations require controlled environments and proper authorization. Unauthorized attempts may result in legal repercussions.
 
 ___
 
-**Disclaimer:**
+> :warning: **Caution:** 
 This research project is conducted for academic and research purposes only. While the proposed methodology demonstrates promising results, its efficacy in real-world deployments may vary depending on specific network configurations and attack scenarios. Users are encouraged to conduct thorough evaluations and validations in their respective environments before implementation.
 ___
-
-> [!WARNING]  
-> DDoS attack simulations require controlled environments and proper authorization. Unauthorized attempts may result in legal repercussions.
 
    
 
