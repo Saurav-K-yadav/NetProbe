@@ -1,5 +1,5 @@
-# DDoS-Detection-using-BLSTM
-## TESTBED SETUP
+# DoS-Detection-using-BLSTM
+## TESTBED SETUP :hammer:	
 -   Install ubuntu(preferred Ubuntu 20.04.6 LTS) and kali linux for simulating attacks
 -   setup [apache2](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04) <br>
        ```
@@ -47,27 +47,27 @@
    ```
    - The websites content is added at /var/www/html. Do sudo systemctl restart apache2 after changing it
        
-## Requirements for demonstration
+## REQUIREMENTS FOR DEMONSTRATION :toolbox:
 
 - create virtual environment using Python 3.10.14 as venv for predictions
-  - python3 -m venv ($NAME OF VIRTUAL ENV)
+  - python3 -m venv ${NAME OF VIRTUAL ENV}
   - pip install -r requirements_main.text
   
 - create virtual environment using Python 3.8.10 as venv for running cicflowmeter
    - python3 -m venv ($NAME OF CIC VIRTUAL ENV)
    - pip install -r requirements_cicflowmeter.text
 
-## INSTALLATION:
+## INSTALLATION :hammer_and_wrench:	
    ### Cicflowmeter
-   -  Activate virtual env using ```source {$CIC VIRTUAL ENV}/bin/activate```
+   -  Activate virtual env using ```source ${CIC VIRTUAL ENV}/bin/activate```
       -   Navigate to cicflowmeter directory
       -   run ```python3 setup.py```
 
-## TO SIMULATE:
+## TO SIMULATE :gear:
 - activate virtual environment using source ($NAME OF VIRTUAL ENV)/bin/activate
 - python3 main.py
   
-## FIREWALL(UFW) SETUP BEFORE SIMULATION:
+## FIREWALL(UFW) SETUP BEFORE SIMULATION :shield:
 - sudo ufw enable
 - sudo ufw allow http
 - sudo ufw status verbose( To see ufw status)
@@ -75,9 +75,22 @@
      - sudo ufw reset
      - sudo ufw enable
      - sudo ufw allow http
-- To see the ipaddress which are already blocked for outgoing traffic by apache2 navigate to /etc/apache2/sites-available/{$domain name example netprobe}.conf and deny from list if not present then all ips are allowed
+- To see the ipaddress which are already blocked for outgoing traffic by apache2 navigate to /etc/apache2/sites-available/${domain name example netprobe}.conf and deny from list if not present then all ips are allowed
   
-   
+## ATTACK SIMULATION :crossed_swords:
+- VSI-DOS using slowloris
+     - Install slowloris from [here](https://github.com/gkbrk/slowloris)
+     - we will tweak slowloris to simulate VSI-DOS using<br>
+                ``` python3 slowloris.py -i ${Target Ip} -p ${Target port} -s 10000 ```
+
+- slowhttptest<br>
+       ```slowhttptest -c 10000  -i 1 -r 1000 -s 8192 -t GET -u http://${target ip}:${target port}/```
+- GoldenEye<br>
+     - Install goldenEye from [here](https://github.com/jseidl/GoldenEye)
+     - simulate attack using command <br>
+            ```./goldeneye.py http://${target ip}:${target port} -w ${Number of concurrent workers} -s ${ Number of concurrent sockets }```
+
+
    
 
 
