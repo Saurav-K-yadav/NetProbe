@@ -109,8 +109,9 @@ NetProbe investigates the application of deep learning for network intrusion det
 
 ___
 
-> :warning: **Caution:** 
-This research project is conducted for academic and research purposes only. While the proposed methodology demonstrates promising results, its efficacy in real-world deployments may vary depending on specific network configurations and attack scenarios. Users are encouraged to conduct thorough evaluations and validations in their respective environments before implementation.
+> [!CAUTION]
+> This research project is conducted for academic and research purposes only. While the proposed methodology demonstrates promising results, its efficacy in real-world deployments may vary depending on specific network configurations and attack scenarios. Users are encouraged to conduct thorough evaluations and validations in their respective environments before implementation.
+
 ___
 
    
