@@ -68,7 +68,7 @@ NetProbe investigates the application of deep learning for network intrusion det
   - ```pip install -r requirements_main.text```
   
 - create virtual environment using Python 3.8.10 as venv for running cicflowmeter
-   - ```python3 -m venv ($NAME OF CIC VIRTUAL ENV)```
+   - ```python3 -m venv ${NAME OF CIC VIRTUAL ENV}```
    - ```pip install -r requirements_cicflowmeter.text```
 
 ## Installation :hammer_and_wrench:	
@@ -76,6 +76,12 @@ NetProbe investigates the application of deep learning for network intrusion det
    -  Activate virtual env using ```source ${CIC VIRTUAL ENV}/bin/activate```
       -   Navigate to cicflowmeter directory
       -   run ```python3 setup.py```
+
+> [!TIP]
+> Add user permission for running cicflowmeter in sudoers.tmp so there is no need to use sudo<br>
+> type ``` sudo visudo```<br>
+> add line ``` ${user} ALL=(ALL) NOPASSWD: ${absolute path}/cicflowmeter -i ${interface} -c ${output}.csv ```
+
 
 ## Firewall(UFW) Setup Before Simulation :shield:
 -     sudo ufw enable
@@ -106,6 +112,10 @@ NetProbe investigates the application of deep learning for network intrusion det
             ```./goldeneye.py http://${target ip}:${target port} -w ${Number of concurrent workers} -s ${ Number of concurrent sockets }```
 > [!WARNING]
 > DDoS attack simulations require controlled environments and proper authorization. Unauthorized attempts may result in legal repercussions.
+
+## VIDEO DEMONSTRATION :movie_camera:
+[!non working video](
+https://github.com/Saurav-K-yadav/NetProbe/assets/79534099/3085f45f-c710-4c32-bb48-c153d466c397)
 
 ___
 
