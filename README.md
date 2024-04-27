@@ -115,7 +115,9 @@ NetProbe investigates the application of deep learning for network intrusion det
 
 ## VIDEO DEMONSTRATION :movie_camera:
 [!non working video](
-https://github.com/Saurav-K-yadav/NetProbe/assets/79534099/3085f45f-c710-4c32-bb48-c153d466c397)
+https://github.com/itsgurpreetsingh/NetProbe/assets/79744977/9e3ed6d9-43a1-4638-be6c-7587e07cd059)
+
+
 
 ___
 
